@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYDRATECH | Rekomendasi Produk Tumbler</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f4f7f5;
+            color: #222;
+        }
+
+        /* ================= NAVBAR ================= */
+        nav {
+            width: 100%;
+            padding: 20px 8%;
+            background: #0b3d2e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #39ff88;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #39ff88;
+        }
+
+        /* ================= HEADER ================= */
+        .product-header {
+            background: linear-gradient(rgba(5, 40, 28, 0.88), rgba(5, 40, 28, 0.88)),
+                        url("https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            padding: 90px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .product-header h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .product-header h1 span {
+            color: #39ff88;
+        }
+
+        .product-header p {
+            font-size: 18px;
+            color: #ddd;
+        }
+
+        /* ================= PRODUK ================= */
+        .products {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #0b3d2e;
+        }
+
+        .section-title h2 span {
+            color: #20b862;
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        /* ================= PRODUCT CARD ================= */
+        .product-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 200px;
+            background: #e8f1eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        .product-info {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .product-info h3 {
+            color: #0b3d2e;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #20b862;
+            font-size: 19px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Tombol diubah menjadi gaya tautan rekomendasi */
+        .buy-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            background: #0b3d2e;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: #20b862;
+            color: #06291e;
+        }
+
+        /* ================= CATEGORY ================= */
+        .categories {
+            padding: 20px 8% 70px;
+        }
+
+        .category-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            padding: 12px 22px;
+            border-radius: 30px;
+            background: white;
+            border: 2px solid #20b862;
+            color: #0b3d2e;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            background: #20b862;
+            color: white;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: #06291e;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h3 {
+            color: #39ff88;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #aaa;
+            margin: 5px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 1000px) {
+            .product-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+            }
+            .product-header h1 {
+                font-size: 38px;
+            }
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <div class="logo">HYDRA<span>TECH</span></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= HEADER ================= -->
+    <section class="product-header">
+        <h1>KURASI <span>PRODUK TERBAIK</span></h1>
+        <p>Rekomendasi pilihan tumbler dan botol minum berkualitas tinggi dari berbagai marketplace terpercaya.</p>
+    </section>
+
+    <!-- ================= KATEGORI ================= -->
+    <section class="categories">
+        <div class="category-container">
+            <div class="category">💧 Semua Produk</div>
+            <div class="category">🥤 Stainless Steel</div>
+            <div class="category">🌡️ Termos Smart</div>
+            <div class="category">🏃 Botol Olahraga</div>
+            <div class="category">☕ Mug Kopi</div>
+        </div>
+    </section>
+
+    <!-- ================= PRODUK ================= -->
+    <section class="products">
+        <div class="section-title">
+            <h2>REKOMENDASI <span>PILIHAN</span></h2>
+            <p>Klik tombol "Cek Produk" untuk melihat detail dan membeli langsung di web sumber.</p>
+        </div>
+
+        <div class="product-container">
+
+            <!-- PRODUK 1 -->
+            <div class="product-card">
+                <div class="product-image">🥤</div>
+                <div class="product-info">
+                    <div>
+                        <h3>LocknLock One Touch Clip Tumbler</h3>
+                        <p>Tumbler premium tahan bocor dengan sistem one-touch, menjaga suhu optimal lebih lama.</p>
+                    </div>
+                    <div>
+                        <div class="price">Rp 219.000</div>
+                        <!-- Ubah href="#" dengan link web/toko produk aslinya -->
+                        <a href="https://www.tokopedia.com" target="_blank" class="buy-btn">Cek Produk di Toko Lain 🔗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUK 2 -->
+            <div class="product-card">
+                <div class="product-image">🌡️</div>
+                <div class="product-info">
+                    <div>
+                        <h3>Smart LED Thermos Flask</h3>
+                        <p>Termos digital canggih dilengkapi indikator suhu sentuh LED pada bagian tutupnya.</p>
+                    </div>
+                    <div>
+                        <div class="price">Rp 185.000</div>
+                        <a href="https://www.shopee.co.id" target="_blank" class="buy-btn">Cek Produk di Toko Lain 🔗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUK 3 -->
+            <div class="product-card">
+                <div class="product-image">🧊</div>
+                <div class="product-info">
+                    <div>
+                        <h3>Tyeso Portable Stainless Tumbler</h3>
+                        <p>Dilengkapi gagang ergonomis yang nyaman, kuat, dan pas untuk dibawa bepergian.</p>
+                    </div>
+                    <div>
+                        <div class="price">Rp 145.000</div>
+                        <a href="https://www.tokopedia.com" target="_blank" class="buy-btn">Cek Produk di Toko Lain 🔗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUK 4 -->
+            <div class="product-card">
+                <div class="product-image">🏃</div>
+                <div class="product-info">
+                    <div>
+                        <h3>Cuculemon Jumbo Tumbler 890ml</h3>
+                        <p>Kapasitas besar dengan bahan Stainless Steel 304, sangat estetik dan ramah lingkungan.</p>
+                    </div>
+                    <div>
+                        <div class="price">Rp 128.000</div>
+                        <a href="https://www.shopee.co.id" target="_blank" class="buy-btn">Cek Produk di Toko Lain 🔗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUK 5 -->
+            <div class="product-card">
+                <div class="product-image">☕</div>
+                <div class="product-info">
+                    <div>
+                        <h3>Mosh! Latte Straw Tumbler</h3>
+                        <p>Desain ala botol susu retro yang unik dan fashionable, dilengkapi sedotan praktis.</p>
+                    </div>
+                    <div>
+                        <div class="price">Rp 348.000</div>
+                        <a href="https://www.tokopedia.com" target="_blank" class="buy-btn">Cek Produk di Toko Lain 🔗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUK 6 -->
+            <div class="property-card product-card">
+                <div class="product-image">🎨</div>
+                <div class="product-info">
+                    <div>
+                        <h3>Youware Harvay Tumbler 900ml</h3>
+                        <p>Pilihan warna gradasi menarik dengan insulasi ganda penahan panas dan dingin.</p>
+                    </div>
+                    <div>
+                        <div class="price">Rp 166.000</div>
+                        <a href="https://www.shopee.co.id" target="_blank" class="buy-btn">Cek Produk di Toko Lain 🔗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUK 7 -->
+            <div class="product-card">
+                <div class="product-image">🛡️</div>
+                <div class="product-info">
+                    <div>
+                        <h3>Eternite Submar Insulated 1200ml</h3>
+                        <p>Botol minum jumbo berkapasitas ekstra besar untuk menemani aktivitas harianmu.</p>
+                    </div>
+                    <div>
+                        <div class="price">Rp 199.000</div>
+                        <a href="https://www.tokopedia.com" target="_blank" class="buy-btn">Cek Produk di Toko Lain 🔗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUK 8 -->
+            <div class="product-card">
+                <div class="product-image">🎒</div>
+                <div class="product-info">
+                    <div>
+                        <h3>Rosca JoraJug Tum
